@@ -408,6 +408,12 @@ web page css
     text-align:center;
 }
 
+/*
+  contents7-2-1 박스 배치
+
+  1. float, 상단기준 정렬
+  2. position:absolute, 하단 기준 정렬
+*/
 .contents7-2-1{
     float:left;
     width:342px;
@@ -508,4 +514,115 @@ web page css
     margin-top:80px;
     position:relative;
     height:497px;
+}
+
+.contents8{
+    height:591px;
+    padding-top:103px;
+    box-sizing:border-box;
+}
+
+.contents8-1{
+    text-align:center;
+}
+
+.description{
+    width:273px;
+    height:147px;
+    background:url(../images/speech_balloon.png) no-repeat 0 0;
+    font-style:italic;
+    padding:21px 12px;
+    line-height:1.3;
+    box-sizing:border-box;
+}
+
+.customer{
+    margin-top:8px;
+}
+
+.customer-image{
+    float:left;
+}
+
+.customer-info{
+    float:left;
+    margin-top:14px;
+    margin-left:15px;
+}
+
+.customer-name{
+    font-size:20px;
+    font-weight:700;
+    color:#333;
+    margin-bottom:7px;
+}
+
+.contents8-2-1:nth-child(1){
+    float:left;
+    margin-left:21px;
+}
+
+.contents8-2-1:nth-child(2){
+    float:left;
+    margin-left:120px;
+    margin-right:120px;
+}
+
+.contents8-2-1:nth-child(3){
+    float:left;
+    margin-right:20px;
+}
+
+.contents8-2{
+    margin-top:55px;
+}
+
+.contents9{
+    height:320px;
+    background:url(../images/contents9_bg.png) no-repeat 0 0;
+    background-size:cover;
+    padding-top:69px;
+    box-sizing:border-box;
+}
+
+.contents9-1{
+    text-align:center;
+}
+
+.contents-heading2.type-white{
+    color:#fff;
+}
+
+.contents-sub-heading2.type-white{
+    color:#fff;
+}
+
+.contents-sub-heading2.type-white:before{
+    background:#fff;
+}
+
+.contents10{
+    height:612px;
+    padding-top:103px;
+    box-sizing:border-box;
+}
+
+.contents10-1{
+    text-align:center;
+}
+
+.btn-center{
+    text-align:center;
+}
+
+.footer{
+    background:#000;
+    height:83px;
+    padding-top:21px;
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.footer-text{
+    margin-top:12px;
 }
