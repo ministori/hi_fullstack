@@ -67,7 +67,8 @@ web page css
 
 .header{
     height:79px;
-    background-color:#000;
+    position:absolute;
+    width:100%;
 }
 
 .container{
@@ -118,6 +119,12 @@ web page css
     text-decoration:none;
 }
 
+.gnb-list-link:hover{
+    color:#fce38a;
+    border-bottom:3px solid #fce38a;
+    padding-bottom:8px;
+}
+
 /* 이미지 표현 방법 : img 태그, background-image 속성 */
 
 .util-list-link.cart{
@@ -156,6 +163,8 @@ web page css
 .contents1{
     height:1000px;
     background:url(../images/contents1_bg.png) no-repeat 0 0;
+    padding-top:211px;
+    box-sizing:border-box;
 }
 
 .align-center{
@@ -174,6 +183,7 @@ web page css
     line-height:140px;
     color:#fff;
     font-weight:700;
+    margin-top:28px;
 }
 
 .slogan2:after{
@@ -190,4 +200,186 @@ web page css
 .btn-more{
     position:relative;
     top:-31px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:14px;
+    font-weight:700;
+    width:160px;
+    height:40px;
+    border:3px solid #fff;
+    background:rgba(0,0,0,0);
+    color:#fff;
+}
+
+.section-list{
+    margin-top:126px;
+}
+
+.section-list-item{
+    width:279px;
+    border-top:3px solid #fff;
+    padding-top:20px;
+    float:left;
+    opacity:0.6;
+    margin-right:28px;
+}
+
+.section-list-item:last-child{
+    margin-right:0;
+}
+
+.section-list-item.active{
+    opacity:1;
+    position:relative;
+}
+
+.section-list-item.active:before{
+    content:"";
+    display:block;
+    width:70px;
+    height:3px;
+    background:#f38181;
+    position:absolute;
+    top:-3px;
+}
+
+.item-number{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:23px;
+    color:#fff;
+}
+
+.item-name{
+    font-family: 'Montserrat', sans-serif;
+    font-size:17px;
+    color:#fff;
+}
+
+.contents2{
+    /* height:1190px; */
+}
+
+.section-heading-group{
+    height:270px;
+}
+
+.gallery{
+    position:relative;
+}
+
+.gallery-image{
+    display:block;
+    float:left;
+    width:25%;
+}
+
+.gallery-image:nth-child(5){
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+
+.gallery-image:nth-child(6){
+    position:absolute;
+    left:25%;
+    bottom:0;
+}
+
+.gallery-image:nth-child(7){
+    position:absolute;
+    left:75%;
+    bottom:0;
+}
+
+.blog-image-group{
+    position:relative;
+}
+
+.blog-image-date{
+    width:60px;
+    height:70px;
+    background:#95e1d3;
+    color:#fff;
+    text-align:center;
+    padding-top:6px;
+    box-sizing:border-box;
+    position:absolute;
+    bottom:10px;
+    left:-10px;
+}
+
+.date-day{
+    display:block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:30px;
+}
+
+.date-month{
+    display:block;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    font-style:italic;
+    font-size:15px;
+}
+
+.blog-text-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size:14px;
+    color:#333;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-top:15px;
+}
+
+.blog-text-description{
+    font-size:15px;
+    color:#999;
+    line-height:24px;
+    margin:12px 0;
+}
+
+.blog-icon-group{
+    border-top:1px solid #e5e5e5;
+    padding-top:15px;
+}
+
+.blog-icon-view-number,
+.blog-icon-reply-number{
+    font-size:15px;
+    line-height:24px;
+    color:#999;
+    font-style:italic;
+    font-weight:300;
+}
+
+.blog-icon-view,
+.blog-icon-reply{
+    display:inline-block;
+}
+
+.blog-icon-reply-image{
+    position:relative;
+    top:2px;
+}
+
+.blog-icon-view{
+    margin-right:16px;
+}
+
+.contents3-1{
+    width:380px;
+    float:left;
+}
+
+.contents3-1:nth-child(2){
+    margin:0 30px;
+}
+
+.blog-image{
+    display:block;
+}
+
+.contents3{
+    height:800px;
 }

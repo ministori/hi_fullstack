@@ -39,7 +39,7 @@ font-family: 'Raleway', sans-serif;
 */
 
 body {
-    line-height: 1;
+    line-height: 1; /* font-size와 line-height 값을 똑같이 적용시켜서 폰트의 상하 기본여백을 제거. ** 제대로 적용이 안되는 경우도 있음(폰트 종류에 따라서) */
     font-size:14px;
     color:#86878b;
     font-family: 'Open Sans', sans-serif;
