@@ -41,95 +41,78 @@ font-family:CookieRun-Regular, sans-serif;
 
 */
 
-
-
 html, body, div, span, applet, object, iframe,
-
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-
 a, abbr, acronym, address, big, cite, code,
-
 del, dfn, em, img, ins, kbd, q, s, samp,
-
 small, strike, strong, sub, sup, tt, var,
-
 b, u, i, center,
-
 dl, dt, dd, ol, ul, li,
-
 fieldset, form, label, legend,
-
 table, caption, tbody, tfoot, thead, tr, th, td,
-
 article, aside, canvas, details, embed, 
-
 figure, figcaption, footer, header, hgroup, 
-
 menu, nav, output, ruby, section, summary,
-
 time, mark, audio, video {
-
     margin: 0;
-
     padding: 0;
-
     border: 0;
-
     font-size: 100%;
-
     font: inherit;
-
     vertical-align: baseline;
 
+    box-sizing:border-box;
 }
-
 /* HTML5 display-role reset for older browsers */
-
 article, aside, details, figcaption, figure, 
-
 footer, header, hgroup, menu, nav, section {
-
     display: block;
-
 }
-
 body {
-
-    line-height: 1;
-
+    /* line-height: 1; */
+    font-family:GmarketSansMedium, sans-serif;
+    font-size:14px;
+    color:#515151;
 }
-
 ol, ul {
-
     list-style: none;
-
 }
-
 blockquote, q {
-
     quotes: none;
-
 }
-
 blockquote:before, blockquote:after,
-
 q:before, q:after {
-
     content: '';
-
     content: none;
-
 }
-
 table {
-
     border-collapse: collapse;
-
     border-spacing: 0;
-
 }
 
 /* page css */
+
+/* common style */
+.flex-container{
+    display:flex;
+}
+
+.flex-container.type01{
+    justify-content: space-between;
+    align-items:center;
+    height:97px;
+}
+
+.container{
+    width: 1026px;
+    margin:0 auto;
+}
+
+/* area style */
+.header{
+    background:#373c3f;
+    height:97px;
+}
 
 .header-logo-link{
     display:block;
@@ -137,4 +120,176 @@ table {
     height:74px;
     background:url(../images/logo.png) no-repeat -91px 0;
     text-indent:-99999em;
+}
+
+.gnb-list{
+    display:flex;
+    width:600px;
+    justify-content: space-between;
+}
+
+.gnb-list-link{
+    color:#fff;
+    text-decoration:none;
+    line-height:30px;
+}
+
+.main-visual{
+    height:577px;
+    background: rgb(25,180,198);
+    background: linear-gradient(110deg, rgba(25,180,198,1) 0%, rgba(7,139,165,1) 100%);
+    padding-top:191px;
+}
+
+.slogan-text{
+    font-family:CookieRun-Regular, sans-serif;
+    font-size:50px;
+    color:#fff;
+    padding-left:80px;
+}
+
+.slogan-url{
+    font-family:CookieRun-Regular, sans-serif;
+    font-size:35px;
+    color:rgba(255,255,255,0.5);
+    padding-left:80px;
+    margin-top:44px;
+    position:relative;
+}
+
+.slogan-url:after{
+    content:"";
+    display:block;
+    width:15px;
+    height:27px;
+    background:url(../images/right_arrow.png) no-repeat 0 0;
+    background-size:15px 27px;
+    position:absolute;
+    top:14px;
+    right:140px;
+}
+
+.contents1{
+    height:245px;
+    background:gray;
+    position:relative;
+}
+
+.contents1:before{
+    content:"";
+    display:block;
+    width:50%;
+    height:245px;
+    background:#27212c;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.contents1:after{
+    content:"";
+    display:block;
+    width:50%;
+    height:245px;
+    background:#bc3183;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.flex-container.type02{
+    height:245px;
+    position:relative;
+    z-index:10;/* 10 간격으로 적용 */
+}
+
+.contents1-1{
+    width:796px;
+    background:#27212c;
+    font-family:CookieRun-Regular, sans-serif;
+    font-size:35px;
+    color:rgba(255,255,255,0.5);
+    padding:45px 80px 0;
+    text-align:justify;
+}
+
+.contents1-2{
+    width:228px;
+    background:#bc3183;
+}
+
+.contents1-2-more{
+    display:block;
+    width:100%;
+    height:100%;
+    background:url(../images/right_arrow.png) no-repeat center;
+    text-indent:-99999em;
+}
+
+.contents1.pseudo-none:before,
+.contents1.pseudo-none:after{
+    content:none;
+}
+
+.contents1.gradient{
+    background: rgb(39,33,44);
+    background: linear-gradient(90deg, rgba(39,33,44,1) 0%, rgba(39,33,44,1) 50%, rgba(188,49,131,1) 50%, rgba(188,49,131,1) 100%);
+}
+
+.contents2{
+    height:294px;
+    position:relative;
+    background:#5b0fa1;
+}
+
+.flex-container.type03{
+    height:294px;
+}
+
+.contents2-1{
+    width:342px;
+    height:294px;
+    overflow:hidden;
+}
+
+.contents2-1 img{
+    display:block;
+    width:100%;
+}
+
+.contents2-1:last-child{
+    width:calc(calc(calc(100% - 1026px) / 2) + 342px);
+    position:absolute;
+    right:0;
+}
+
+.contents2-1-more{
+    display:block;
+    width:100%;
+    height:100%;
+    background:url(../images/right_arrow.png) no-repeat center;
+    text-indent:-99999em;
+    background-size:15px 27px;
+}
+.contents3{
+    background:#ebebeb;
+    padding:50px 0;
+}
+
+.title{
+    font-family:CookieRun-Regular, sans-serif;
+    font-size:35px;
+    color:#088ca5;
+    padding-left:80px;
+}
+
+.paragraph-group{
+    display:flex;
+    flex-wrap:wrap;
+    padding:0 50px;
+}
+
+.paragraph{
+    width:50%;
+    padding:30px;
 }
