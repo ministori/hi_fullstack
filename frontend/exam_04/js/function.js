@@ -40,16 +40,79 @@ $(function(){
     });
 
     // header-02
+    var $currentPage = $('.header-02 .gnb-list-link');
+    $currentPage.each(function(i){
+        if( $($currentPage).eq(i).hasClass('active') ){
+
+            $($currentPage).eq(i).stop().animate({
+                color:'#e23084'
+            }, 1000, 'easeInQuad');
+    
+            $($currentPage).eq(i).children().stop().animate({
+                width:'100%'
+            }, 1000, 'easeInQuad');
+
+        }
+    });
+
+
     $('.header-02 .gnb-list-link').on('mouseenter', function(){
-        $(this).animate({
+        $(this).stop().animate({
             color:'#e23084'
         }, 1000, 'easeInQuad');
+
+        $(this).children().stop().animate({
+            width:'100%'
+        }, 1000, 'easeInQuad');
+
+        var $activeElement = $(this).parent().siblings().children();
+
+        $activeElement.each(function(i){
+            
+            // hasClass('active') : active Class를 가지고 있는지 체크, true/false
+            if( $activeElement.eq(i).hasClass('active') ){
+
+                $(this).stop().animate({
+                    color:'#333'
+                }, 1000, 'easeInQuad');
+        
+                $(this).children().stop().animate({
+                    width:'0'
+                }, 1000, 'easeInQuad');
+
+            }
+
+        });
+
     });
 
     $('.header-02 .gnb-list-link').on('mouseleave', function(){
-        $(this).animate({
+        $(this).stop().animate({
             color:'#333'
         }, 1000, 'easeInQuad');
+
+        $(this).children().stop().animate({
+            width:'0'
+        }, 1000, 'easeInQuad');
+
+        var $activeElement = $(this).parent().siblings().children();
+
+        $activeElement.each(function(i){
+            
+            // hasClass('active') : active Class를 가지고 있는지 체크, true/false
+            if( $activeElement.eq(i).hasClass('active') ){
+
+                $(this).stop().animate({
+                    color:'#e23084'
+                }, 1000, 'easeInQuad');
+        
+                $(this).children().stop().animate({
+                    width:'100%'
+                }, 1000, 'easeInQuad');
+
+            }
+
+        });
     });
 
 });

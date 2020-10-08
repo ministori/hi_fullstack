@@ -133,8 +133,7 @@ table {
     color:pink;
 } */
 
-.header-02 .gnb-list-link:after{
-    content:"";
+.header-02 .gnb-list-link .underbar{
     display:block;
     width:0;
     height:3px;
