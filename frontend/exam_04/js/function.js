@@ -115,4 +115,90 @@ $(function(){
         });
     });
 
+
+    // header-03
+    $('.header-03 .gnb-list-link').on('mouseenter', function(){
+
+        console.log($(this).width());
+        console.log($(this).position());
+
+        $('.header-03 .gnb .underbar').stop().animate({
+            width: $(this).width(),
+            left: $(this).position().left
+        }, 600, 'easeOutExpo');
+
+    });
+
+    // header-04
+    $('.header-04 .gnb-list-link').on('mouseenter', function(){
+
+        $('.header-04 .gnb .underbar').stop().animate({
+            width: $(this).width(),
+            left: $(this).position().left
+        }, 600, 'easeOutExpo');
+
+        $('.header-04, .gnb').addClass('open');
+
+    });
+
+    $('.header-04 .gnb').on('mouseleave', function(){
+
+        $('.header-04, .gnb').removeClass('open');
+
+    });
+
+    $('.header-04 .gnb-2depth-link').on('mouseenter', function(){
+
+        var $width = $(this).parents('.gnb-2depth-list').prev().width();
+        var $left = $(this).parents('.gnb-2depth-list').prev().position().left;
+
+        $('.header-04 .gnb .underbar').stop().animate({
+            width: $width,
+            left: $left
+        }, 600, 'easeOutExpo');
+
+    });
+
+
+
+    // accordion-01
+    $('.acc-list-01 .acc-list-title').on('click', function(){
+
+        $('.acc-list-01 .acc-list-desc').removeClass('active');
+
+        $(this).next().addClass('active');
+
+    });
+
+    // accordion-02
+    $('.acc-list-02 .acc-list-title').on('click', function(){
+
+        $('.acc-list-02 .acc-list-title').removeClass('active');
+
+        $(this).addClass('active');
+
+        $('.acc-list-02 .acc-list-desc').removeClass('active');
+
+        $(this).next().addClass('active');
+
+    });
+
+    // tab
+    $('.tab-title').on('click', function(){
+
+        $('.tab-title').removeClass('active');
+
+        $(this).addClass('active');
+
+        $('.tab-title').next().removeClass('active');
+
+        $(this).next().addClass('active');
+
+    });
+
 });
+
+// 요소 탐색
+// $('.gnb-list-link').parent() => .gnb-list-item
+// $('.gnb-list-link').parents() => .gnb-list-item, .gnb-list, .gnb, .container, .header-01, body, html
+// $('.gnb-list-link').parents('.gnb-list') => .gnb-list
