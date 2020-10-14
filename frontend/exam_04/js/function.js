@@ -159,6 +159,36 @@ $(function(){
 
     });
 
+    // header-05
+    $('.header-05 .gnb-list-link').on('mouseenter', function(){
+
+        $('.header-05 .gnb .underbar').stop().animate({
+            width: $(this).width(),
+            left: $(this).position().left
+        }, 600, 'easeOutExpo');
+
+        $('.header-05, .gnb').addClass('open');
+
+    });
+
+    $('.header-05 .gnb').on('mouseleave', function(){
+
+        $('.header-05, .gnb').removeClass('open');
+
+    });
+
+    $('.header-05 .gnb-2depth-link').on('mouseenter', function(){
+
+        var $width = $(this).parents('.gnb-2depth-list').prev().width();
+        var $left = $(this).parents('.gnb-2depth-list').prev().position().left;
+
+        $('.header-05 .gnb .underbar').stop().animate({
+            width: $width,
+            left: $left
+        }, 600, 'easeOutExpo');
+
+    });
+
 
 
     // accordion-01
@@ -195,6 +225,48 @@ $(function(){
         $(this).next().addClass('active');
 
     });
+
+    
+    
+    // visual effect
+
+    // 01 fade 효과
+
+    var visualIndex = 1;
+    //$('.visual').on('click', function(){
+    setInterval(function(){
+
+        if(visualIndex == 3){
+            visualIndex = 0;
+        }
+
+        $('.visual-01 .visual-image').eq(visualIndex).siblings().removeClass('active');
+        // $('.visual-image').removeClass('active');
+        $('.visual-01 .visual-image').eq(visualIndex).addClass('active');
+
+        visualIndex++;
+
+    }, 2000);
+    //});
+
+    // 02 sliding 효과
+
+    slidingIndex = 1;
+    setInterval(function(){
+
+        if(slidingIndex == 3){
+            slidingIndex = 0;
+        }
+
+        $('.visual-02 .visual-image').eq(slidingIndex).siblings().removeClass('active');
+        // $('.visual-image').removeClass('active');
+        $('.visual-02 .visual-image').eq(slidingIndex).addClass('active');
+
+        slidingIndex++;
+
+    }, 2000);
+
+
 
 });
 
