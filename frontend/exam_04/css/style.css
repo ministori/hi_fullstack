@@ -503,13 +503,14 @@ table {
     position:absolute; /* fade 효과를 적용하기 위한 위치, 이미지 가운데 배치 */
     top:0;
     left:50%;
-    transform:translateX(-50%);
+    transform:translateX(-50%) scale(1);
     opacity:0;
-    transition:opacity 0.5s;
+    transition:opacity 0.5s, transform 5s;
 }
 
 .visual-01 .visual-image.active{
     opacity:1;
+    transform:translateX(-50%) scale(1.1);
 }
 
 .visual-02{
@@ -546,4 +547,28 @@ table {
 
 .visual-02 .visual-image.next{
     left:-100%;
+}
+
+/* visual 03 */
+
+.visual-03{
+    width:100%;
+    height:850px;
+    overflow:hidden;
+    position:relative;
+}
+
+.visual-03 .visual-03-container{
+    position:absolute;
+    width:1920px;
+    height:100%;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.visual-03 .visual-image{
+    display:block;
+    width:1920px;
+    position:absolute; /* fade 효과를 적용하기 위한 위치, 이미지 가운데 배치 */
+    top:0;
 }

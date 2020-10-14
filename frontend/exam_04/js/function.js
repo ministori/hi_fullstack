@@ -278,6 +278,43 @@ $(function(){
 
     }, 2000);
 
+    var currentIndex = 1;
+
+    $('.visual-03 .visual-image').css({
+        left:'100%'
+    });
+
+    $('.visual-03 .visual-image').eq(0).css({
+        left:0
+    });
+
+    setInterval(function(){
+
+
+        if(currentIndex == 3){
+            currentIndex = 0;
+        }
+
+        if(currentIndex-1 == -1){
+            $('.visual-03 .visual-image').eq(2).stop().animate({
+                left:'-100%'
+            });
+        } else {
+            $('.visual-03 .visual-image').eq(currentIndex-1).stop().animate({
+                left:'-100%'
+            });
+        }        
+
+        $('.visual-03 .visual-image').eq(currentIndex).css({
+            left:'100%'
+        }).stop().animate({
+            left:0
+        });
+
+        currentIndex++;
+
+    }, 2000);
+
 
 
 });
