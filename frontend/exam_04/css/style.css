@@ -532,10 +532,18 @@ table {
     width:1920px;
     position:absolute; /* fade 효과를 적용하기 위한 위치, 이미지 가운데 배치 */
     top:0;
-    left:100%;
     transition:left 0.5s;
 }
 
-.visual-02 .visual-image.active{
+.visual-02 .visual-image.prev{
+    transition:none;
+    left:100%;
+}
+
+.visual-02 .visual-image.current{
     left:0;
+}
+
+.visual-02 .visual-image.next{
+    left:-100%;
 }

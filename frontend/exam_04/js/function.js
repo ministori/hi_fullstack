@@ -258,9 +258,21 @@ $(function(){
             slidingIndex = 0;
         }
 
-        $('.visual-02 .visual-image').eq(slidingIndex).siblings().removeClass('active');
-        // $('.visual-image').removeClass('active');
-        $('.visual-02 .visual-image').eq(slidingIndex).addClass('active');
+        $('.visual-02 .visual-image').removeClass('next current prev');
+
+        if(slidingIndex - 1 == -1){
+            $('.visual-02 .visual-image').eq(2).addClass('next');
+        } else {
+            $('.visual-02 .visual-image').eq(slidingIndex - 1).addClass('next');
+        }
+
+        $('.visual-02 .visual-image').eq(slidingIndex).addClass('current');
+        
+        if( slidingIndex + 1 == 3 ){
+            $('.visual-02 .visual-image').eq(0).addClass('prev');
+        } else {
+            $('.visual-02 .visual-image').eq(slidingIndex + 1).addClass('prev');
+        }
 
         slidingIndex++;
 
