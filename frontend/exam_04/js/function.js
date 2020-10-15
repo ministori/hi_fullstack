@@ -232,8 +232,14 @@ $(function(){
 
     // 01 fade 효과
 
-    var visualIndex = 1;
+    var visualIndex = 0;
     //$('.visual').on('click', function(){
+
+    $('.visual-01 .image-number-item').eq(visualIndex).siblings().removeClass('active');
+    $('.visual-01 .image-number-item').eq(visualIndex).addClass('active');
+
+    visualIndex++;
+
     setInterval(function(){
 
         if(visualIndex == 3){
@@ -244,9 +250,12 @@ $(function(){
         // $('.visual-image').removeClass('active');
         $('.visual-01 .visual-image').eq(visualIndex).addClass('active');
 
+        $('.visual-01 .image-number-item').eq(visualIndex).siblings().removeClass('active');       
+        $('.visual-01 .image-number-item').eq(visualIndex).addClass('active');       
+
         visualIndex++;
 
-    }, 2000);
+    }, 5000);
     //});
 
     // 02 sliding 효과

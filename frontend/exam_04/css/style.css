@@ -505,12 +505,65 @@ table {
     left:50%;
     transform:translateX(-50%) scale(1);
     opacity:0;
-    transition:opacity 0.5s, transform 5s;
+    transition:opacity 0.5s, /*transform 20s*/;
 }
 
 .visual-01 .visual-image.active{
     opacity:1;
     transform:translateX(-50%) scale(1.1);
+}
+
+.visual-01 .image-number{
+    position:absolute;
+    top:50%;
+    left:30%;
+    background:rgba(0,0,0,0.4);
+}
+
+.clearfix:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.visual-01 .image-number-item{
+    width:100px;
+    float:left;
+}
+
+.visual-01 .image-number-link{
+    display:block;
+    text-decoration:none;
+}
+
+.visual-01 .image-number-order{
+    display:block;
+    color:#fff;
+}
+
+.visual-01 .image-number-time{
+    display:block;
+    text-indent:-99999em;
+    width:100%;
+    height:3px;
+    background:#fff;
+    margin-top:20px;
+}
+
+.visual-01 .image-number-time-bar{
+    display:block;
+    width:0;
+    height:3px;
+    background:#f00;
+}
+
+.visual-01 .image-number-item.active .image-number-order{
+    color:#f00;
+}
+
+.visual-01 .image-number-item.active .image-number-time-bar{
+    width:100%;
+    transition:width 4.7s linear;
 }
 
 .visual-02{
