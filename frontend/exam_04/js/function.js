@@ -1,4 +1,34 @@
 // $(document).ready(function(){});
+var visualIndex;
+var intervalID;
+
+function visualPlay(){
+    
+    intervalID = setInterval(function(){
+
+        if(visualIndex == 3){
+            visualIndex = 0;
+        }
+
+        $('.visual-01 .visual-image').eq(visualIndex).siblings().removeClass('active');
+        // $('.visual-image').removeClass('active');
+        $('.visual-01 .visual-image').eq(visualIndex).addClass('active');
+
+        $('.visual-01 .image-number-item').eq(visualIndex).siblings().removeClass('active');       
+        $('.visual-01 .image-number-item').eq(visualIndex).addClass('active');       
+
+        visualIndex++;
+
+    }, 5000);
+
+    $('.play-button').removeClass('play').addClass('pause');
+}
+
+function visualPause(intervalID){
+    clearInterval(intervalID);
+    $('.play-button').removeClass('pause').addClass('play');
+}
+
 $(function(){
 
     // header-01
@@ -189,8 +219,6 @@ $(function(){
 
     });
 
-
-
     // accordion-01
     $('.acc-list-01 .acc-list-title').on('click', function(){
 
@@ -232,7 +260,7 @@ $(function(){
 
     // 01 fade 효과
 
-    var visualIndex = 0;
+    visualIndex = 0;
     //$('.visual').on('click', function(){
 
     $('.visual-01 .image-number-item').eq(visualIndex).siblings().removeClass('active');
@@ -240,23 +268,28 @@ $(function(){
 
     visualIndex++;
 
-    setInterval(function(){
+    visualPlay();
 
-        if(visualIndex == 3){
-            visualIndex = 0;
+    //});
+
+    var playStatus = true;
+    $('.play-button').on('click', function(){
+
+        if(playStatus){
+
+            visualPause(intervalID);
+
+            playStatus = false;
+
+        } else {
+
+            visualPlay();
+
+            playStatus = true;
+
         }
 
-        $('.visual-01 .visual-image').eq(visualIndex).siblings().removeClass('active');
-        // $('.visual-image').removeClass('active');
-        $('.visual-01 .visual-image').eq(visualIndex).addClass('active');
-
-        $('.visual-01 .image-number-item').eq(visualIndex).siblings().removeClass('active');       
-        $('.visual-01 .image-number-item').eq(visualIndex).addClass('active');       
-
-        visualIndex++;
-
-    }, 5000);
-    //});
+    });
 
     // 02 sliding 효과
 

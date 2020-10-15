@@ -566,6 +566,33 @@ table {
     transition:width 4.7s linear;
 }
 
+.visual-01 .play-button{
+    display:block;
+    width:30px;
+    height:37px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    background-color:rgba(255,255,255,0.3);
+    text-indent:-99999em;
+    border:0;
+    cursor:pointer;
+}
+
+.visual-01 .play-button.play{
+    background-image:url(../images/play.png);
+    background-repeat:no-repeat;
+    background-position:0 0;
+    background-size:cover;
+}
+
+.visual-01 .play-button.pause{
+    background-image:url(../images/pause.png);
+    background-repeat:no-repeat;
+    background-position:0 0;
+    background-size:cover;
+}
+
 .visual-02{
     width:100%;
     height:850px;
