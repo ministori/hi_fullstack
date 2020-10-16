@@ -1,0 +1,369 @@
+/* header 05 */
+
+.header-05{
+    height:100px;
+    border-bottom:1px solid #ddd;
+    position:relative;
+    transition:height 0.5s ease-out;
+    overflow:hidden;
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:900;
+}
+
+.header-05.open{
+    height:240px;
+}
+
+.header-05:after{
+    content:"";
+    display:block;
+    width:100%;
+    height:1px;
+    background:#ddd;
+    position:absolute;
+    top:100px;
+    left:0;
+    z-index:-1;
+}
+
+.header-05 .gnb-list-link{
+    display:block;
+    height:100px;
+    position:relative;
+    line-height:100px;
+    color:#333;
+    text-decoration:none;
+}
+
+.header-05 .gnb{
+    position:relative;
+}
+
+.header-05 .gnb.open{
+    height:240px;
+}
+
+.header-05 .gnb .underbar{
+    display:block;
+    width:0;
+    height:3px;
+    background:pink;
+    position:absolute;
+    top:98px;
+}
+
+.header-05 .gnb-2depth-list{
+    position:absolute;
+    top:150px;
+    opacity:0;
+    transition:opacity 0.5s;
+}
+
+.header-05 .gnb.open .gnb-2depth-list{
+    opacity:1;
+}
+
+.header-05 .gnb-2depth-link{
+    color:#333;
+    text-decoration:none;
+    line-height:1.8;
+}
+
+.header-05 .gnb-2depth-link:hover{
+    color:pink;
+}
+
+.visual-01{
+    width:100%;
+    height:850px;
+    overflow:hidden;
+    position:relative;
+}
+
+.visual-01 .visual-image{
+    display:block;
+    width:1920px;
+    position:absolute; /* fade 효과를 적용하기 위한 위치, 이미지 가운데 배치 */
+    top:0;
+    left:50%;
+    transform:translateX(-50%) scale(1);
+    opacity:0;
+    transition:opacity 0.5s, transform 20s;
+}
+
+.visual-01 .visual-image.active{
+    opacity:1;
+    transform:translateX(-50%) scale(1.1);
+}
+
+.visual-01 .control{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    background: rgba(80,80,80,0.6);
+}
+
+.visual-01 .image-number{
+
+}
+
+.clearfix:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.visual-01 .image-number-item{
+    width:100px;
+    float:left;
+}
+
+.visual-01 .image-number-link{
+    display:block;
+    text-decoration:none;
+}
+
+.visual-01 .image-number-order{
+    display:block;
+    color:#fff;
+}
+
+.visual-01 .image-number-time{
+    display:block;
+    text-indent:-99999em;
+    width:100%;
+    height:3px;
+    background:#fff;
+    margin-top:20px;
+}
+
+.visual-01 .image-number-time-bar{
+    display:block;
+    width:0;
+    height:3px;
+    background:#f00;
+}
+
+.visual-01 .image-number-item.active .image-number-order{
+    color:#f00;
+}
+
+.visual-01 .image-number-item.active .image-number-time-bar{
+    width:100%;
+    transition:width 4.7s linear;
+}
+
+.visual-01 .play-button,
+.visual-01 .arrow-button{
+    display:block;
+    height:50px;
+    text-indent:-99999em;
+    border:0;
+    cursor:pointer;
+    /* transparent : 배경색 투명 */
+    /* background-color:rgba(0,0,0,0); */
+    /* background-color:transparent; */
+    background:rgba(0,0,0,0) url(../images/icon_sprite.png) no-repeat 0 0;
+}
+
+.visual-01 .play-button{
+    position: absolute;
+    left: 50%;
+    top: 65px;
+    transform: translateX(-50%);
+}
+
+.visual-01 .play-button.play{
+    width:41px;
+    background-position:0 0;
+}
+
+.visual-01 .play-button.pause{
+    width:33px;
+    background-position:-51px 0;
+}
+
+.arrow-container{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+.visual-01 .arrow-button.left{
+    width:31px;
+    background-position:-94px 0;
+}
+
+.visual-01 .arrow-button.right{
+    width:31px;
+    background-position:-135px 0;
+}
+
+.visual-02{
+    width:100%;
+    height:850px;
+    overflow:hidden;
+    position:relative;
+}
+
+.visual-02 .visual-02-container{
+    position:absolute;
+    width:1920px;
+    height:100%;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.visual-02 .visual-image{
+    display:block;
+    width:1920px;
+    position:absolute; /* fade 효과를 적용하기 위한 위치, 이미지 가운데 배치 */
+    top:0;
+    transition:left 0.5s;
+}
+
+.visual-02 .visual-image.prev{
+    left:100%;
+}
+
+.visual-02 .visual-image.prev.jump{
+    transition:none;
+}
+
+.visual-02 .visual-image.current{
+    left:0;
+}
+
+.visual-02 .visual-image.next{
+    left:-100%;
+}
+
+.visual-02 .visual-image.next.jump{
+    transition:none;
+}
+
+.visual-02 .control{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    background: rgba(80,80,80,0.6);
+}
+
+.visual-02 .image-number{
+
+}
+
+.visual-02 .image-number-item{
+    width:100px;
+    float:left;
+}
+
+.visual-02 .image-number-link{
+    display:block;
+    text-decoration:none;
+}
+
+.visual-02 .image-number-order{
+    display:block;
+    color:#fff;
+}
+
+.visual-02 .image-number-time{
+    display:block;
+    text-indent:-99999em;
+    width:100%;
+    height:3px;
+    background:#fff;
+    margin-top:20px;
+}
+
+.visual-02 .image-number-time-bar{
+    display:block;
+    width:0;
+    height:3px;
+    background:#f00;
+}
+
+.visual-02 .image-number-item.active .image-number-order{
+    color:#f00;
+}
+
+.visual-02 .image-number-item.active .image-number-time-bar{
+    width:100%;
+    transition:width 4.7s linear;
+}
+
+.visual-02 .play-button,
+.visual-02 .arrow-button{
+    display:block;
+    height:50px;
+    text-indent:-99999em;
+    border:0;
+    cursor:pointer;
+    /* transparent : 배경색 투명 */
+    /* background-color:rgba(0,0,0,0); */
+    /* background-color:transparent; */
+    background:rgba(0,0,0,0) url(../images/icon_sprite.png) no-repeat 0 0;
+}
+
+.visual-02 .play-button{
+    position: absolute;
+    left: 50%;
+    top: 65px;
+    transform: translateX(-50%);
+}
+
+.visual-02 .play-button.play{
+    width:41px;
+    background-position:0 0;
+}
+
+.visual-02 .play-button.pause{
+    width:33px;
+    background-position:-51px 0;
+}
+
+.arrow-container{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+.visual-02 .arrow-button.left{
+    width:31px;
+    background-position:-94px 0;
+}
+
+.visual-02 .arrow-button.right{
+    width:31px;
+    background-position:-135px 0;
+}
+
+
+
+/* visual 03 */
+
+.visual-03{
+    width:100%;
+    height:850px;
+    overflow:hidden;
+    position:relative;
+}
+
+.visual-03 .visual-03-container{
+    position:absolute;
+    width:1920px;
+    height:100%;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.visual-03 .visual-image{
+    display:block;
+    width:1920px;
+    position:absolute; /* fade 효과를 적용하기 위한 위치, 이미지 가운데 배치 */
+    top:0;
+}

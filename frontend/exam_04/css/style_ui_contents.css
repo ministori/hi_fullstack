@@ -1,0 +1,144 @@
+/* Accodion UI */
+
+.acc-contents{
+    width:500px;
+    margin:10px;
+    border:1px solid #333;
+    padding:20px;
+    float:left;
+}
+
+.acc-list-01 .acc-list-title{
+    height:50px;
+    border:1px solid #ddd;
+    background:#fafafa;
+    line-height:55px;
+    padding-left:20px;
+    margin-top:10px;
+}
+
+.acc-list-01 .acc-list-desc{
+    border:1px solid #ddd;
+    border-top:0;
+    padding:20px;
+    display:none;
+}
+
+.acc-list-01 .acc-list-desc.active{
+    display:block;
+}
+
+/* accordion 02 */
+.acc-list-02 .acc-list-title{
+    height:50px;
+    border:1px solid #ddd;
+    background:#fafafa;
+    line-height:55px;
+    padding-left:20px;
+    margin-top:10px;
+    border-radius:10px 10px 10px 10px;
+    transition:border-radius 0.5s;
+    position:relative;
+    z-index:10;
+}
+
+.acc-list-02 .acc-list-title.active{
+    border-radius:10px 10px 0 0;
+}
+
+.acc-list-02 .acc-list-desc{
+    border:1px solid #ddd;
+    border-top:0;
+    height:50px;
+    border-radius:10px 10px 10px 10px;
+    margin-top:-50px;
+    overflow:hidden;
+    transition:height 0.5s, border-radius 0.5s, margin-top 0.5s;
+    position:relative;
+    z-index:1;
+}
+
+.acc-list-02 .acc-list-desc.active{
+    height:380px;
+    border-radius:0 0 10px 10px;
+    margin-top:0;
+}
+
+.acc-list-02 .acc-list-desc-inner{
+    padding:20px;
+}
+
+/* tab css */
+
+.tab-contents{
+    width:500px;
+    border:1px solid #333;
+    margin:30px auto;
+}
+
+.tab-inner{
+    position:relative;
+    padding:50px 20px 20px 20px;
+}
+
+.tab-title{
+    width:100px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #ddd;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.tab-title.title-01{
+    left:0;
+}
+.tab-title.title-02{
+    left:100px;
+}
+.tab-title.title-03{
+    left:200px;
+}
+.tab-title.title-04{
+    left:300px;
+}
+
+.tab-desc{
+    display:none;
+}
+
+.tab-title.active{
+    background:#000;
+    color:#fff;
+}
+
+.tab-desc.active{
+    display:block;
+}
+
+.ui-widget.ui-widget-content{
+    border:0;
+    padding:0;
+    box-shadow: 10px 10px 5px #333;
+}
+
+.ui-datepicker .ui-datepicker-header{
+    border:0;
+    background:#1c3cd9;
+    color:#fff;
+    border-radius:0;
+}
+
+.ui-widget-content .ui-state-default{
+    border:0;
+    background:none;
+}
+
+.ui-datepicker th{
+    font-weight:normal;
+}
+
+.ui-datepicker td a{
+    text-align:center;
+}
