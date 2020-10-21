@@ -69,11 +69,17 @@ web page css
     height:79px;
     position:absolute;
     width:100%;
+    z-index:900;
 }
 
 .container{
     width:1200px;
     margin:0 auto;
+}
+
+.container.arrange{
+    position:relative;
+    z-index:10;
 }
 
 .header-logo{
@@ -161,10 +167,25 @@ web page css
 }
 
 .contents1{
+    min-width:1200px;
     height:1000px;
     background:url(../images/contents1_bg.png) no-repeat 0 0;
     padding-top:211px;
     box-sizing:border-box;
+    position:relative;
+    overflow:hidden;
+}
+
+.contents1:after{
+    content:"";
+    display:block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background: rgb(237,216,136);
+    background: linear-gradient(5deg, rgba(237,216,136,0.5) 0%, rgba(233,130,131,1) 100%);
 }
 
 .align-center{
@@ -255,7 +276,31 @@ web page css
     color:#fff;
 }
 
+.main-image-container{
+    min-width:2000px; /* 2000px 보다 커지면 늘어남 */
+    height:100%;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.main-image{
+    display:block;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transition:opacity 1s ease-out;
+}
+
+.main-image.active{
+    opacity:1;
+}
+
 .contents2{
+    min-width:1200px;
     /* height:1190px; */
 }
 
@@ -381,6 +426,7 @@ web page css
 }
 
 .contents3{
+    min-width:1200px;
     height:800px;
 }
 
