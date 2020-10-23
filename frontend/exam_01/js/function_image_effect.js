@@ -17,39 +17,12 @@ function visualPlay(){
         rightFade();
 
     }, 5000);
-
-    $('.visual-01 .play-button').removeClass('play').addClass('pause');
 }
 
 // 일시 정지
 function visualPause(intervalID){
     clearInterval(intervalID);
     $('.play-button').removeClass('pause').addClass('play');
-}
-
-// left arrow 클릭시 페이드
-// 순서가 앞쪽으로 변경 => 인덱스 번호가 감소
-function leftFade(){
-
-    if(prevIndex < 0){
-        prevIndex = 2;
-    }
-
-    //$('.visual-01 .visual-image').eq(currentIndex).siblings().removeClass('active');
-    // $('.visual-image').removeClass('active');
-
-    $('.visual-01 .visual-image').eq(currentIndex).removeClass('active');
-    $('.visual-01 .visual-image').eq(prevIndex).addClass('active');
-
-    $('.visual-01 .image-number-item').eq(currentIndex).removeClass('active');
-    $('.visual-01 .image-number-item').eq(prevIndex).addClass('active');
-
-    nextIndex = currentIndex;
-    currentIndex = prevIndex;
-    prevIndex--;
-
-    console.log("prev : " +  prevIndex + " current : " +  currentIndex + " next : " + nextIndex);
-
 }
 
 // right arrow 클릭시 페이드
@@ -66,14 +39,9 @@ function rightFade(){
     $('.fade-container').eq(currentIndex).removeClass('active');
     $('.fade-container').eq(nextIndex).addClass('active');
 
-    $('.visual-01 .image-number-item').eq(currentIndex).removeClass('active');
-    $('.visual-01 .image-number-item').eq(nextIndex).addClass('active');
-
     prevIndex = currentIndex;
     currentIndex = nextIndex;
     nextIndex++;
-
-    console.log("prev : " +  prevIndex + " current : " +  currentIndex + " next : " + nextIndex);
 
 }
 
@@ -85,39 +53,66 @@ $(function(){
     currentIndex = 0;
     nextIndex = 1;
 
-    $('.visual-01 .image-number-item').eq(currentIndex).addClass('active');
-
     visualPlay();
 
-    var playStatus = true;
-    $('.visual-01 .play-button').on('click', function(){
+    $('.contact-input').on('focusin', function(){
+        $(this).parent().addClass('active');
+    });
 
-        if(playStatus){
+    $('.contact-input').on('focusout', function(){
+        $(this).parent().removeClass('active');
+    });
 
-            visualPause(intervalID);
+    var last = 0;
+    $(document).on('scroll', function(){
+        var st = $(this).scrollTop();
 
-            playStatus = false;
-
+        if( st > last ){
+            // down
+            $('.header').addClass('scroll');
         } else {
-
-            visualPlay();
-
-            playStatus = true;
-
+            // up
+            if( st <= 10 ){
+                $('.header').removeClass('scroll');
+            }
+            
         }
 
+        last = st;
+
+        // scroll indicator
+        // scrollHeight : 스크롤바 높이를 뺀 문서의 전체 높이
+        // clientHeight : 브라우저 영역의 높이
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPosition = $(this).scrollTop();
+        var scrolled = (scrollPosition / height) * 100;
+        console.log(scrolled);
+        $('.scroll-indicator').css({
+            width:scrolled + '%'
+        });
+
+        console.log( 'window : ' + $(window).height() );
+        console.log( 'document : ' + $(document).height() );
+        console.log( 'body : ' + $('body').height() );
+        console.log( 'scroll : ' + $(this).scrollTop() );
+        console.log( $('body').height() - $(this).scrollTop() );
     });
 
-    $('.visual-01 .arrow-button.left').on('click', function(){
-        visualPause(intervalID);
-        playStatus = false;
-        leftFade();
+    $('.copy-text').on('click', function(){
+        $('.textarea').select();
+        document.execCommand('copy');
+
+        window.alert('클립보드에 복사되었습니다.');
     });
 
-    $('.visual-01 .arrow-button.right').on('click', function(){
-        visualPause(intervalID);
-        playStatus = false;
-        rightFade();
-    });
+});
+
+$(window).on('load', function(){
+
+    setTimeout(function(){
+        $('.loader').remove();
+
+        $('.contents').addClass('active');
+    }, 3000);
 
 });

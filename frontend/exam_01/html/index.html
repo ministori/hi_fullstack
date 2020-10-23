@@ -9,27 +9,32 @@
         <script src="../js/function_image_effect.js"></script>
     </head>
     <body>
+      <!-- <div class="loader">
+        <img src="../images/loader.gif" alt="로딩중입니다." />
+      </div> -->
+      <div class="contents">
         <header class="header">
-            <div class="container">
-                <h1 class="header-logo">
-                    <a href="/" class="header-logo-link">
-                        <img src="../images/logo.png" alt="AXIT 로고" class="header-logo-img" />
-                    </a>
-                </h1>
+          <div class="container">
+              <h1 class="header-logo">
+                  <a href="/" class="header-logo-link">
+                      <img src="../images/logo.png" alt="AXIT 로고" class="header-logo-img" />
+                  </a>
+              </h1>
 
-                <nav class="gnb"> <!-- gnb : Global Navigation Bar -->
-                    <ul class="gnb-list">
-                        <li class="gnb-list-item"><a href="#" class="gnb-list-link">Features</a></li>
-                        <li class="gnb-list-item"><a href="#" class="gnb-list-link">About</a></li>
-                        <li class="gnb-list-item"><a href="#" class="gnb-list-link">Pricing</a></li>
-                        <li class="gnb-list-item"><a href="#" class="gnb-list-link">Reviews</a></li>
-                        <li class="gnb-list-item"><a href="#" class="gnb-list-link">Contact</a></li>
-                    </ul>
-                </nav>
+              <nav class="gnb"> <!-- gnb : Global Navigation Bar -->
+                  <ul class="gnb-list">
+                      <li class="gnb-list-item"><a href="#" class="gnb-list-link">Features</a></li>
+                      <li class="gnb-list-item"><a href="#" class="gnb-list-link">About</a></li>
+                      <li class="gnb-list-item"><a href="#" class="gnb-list-link">Pricing</a></li>
+                      <li class="gnb-list-item"><a href="#" class="gnb-list-link">Reviews</a></li>
+                      <li class="gnb-list-item"><a href="#" class="gnb-list-link">Contact</a></li>
+                  </ul>
+              </nav>
 
-                <!-- <div class="clearfix"></div> => 가상 요소 -->
+              <!-- <div class="clearfix"></div> => 가상 요소 -->
 
-            </div>
+          </div>
+          <i class="scroll-indicator"></i>
         </header>
 
         <section class="contents1">
@@ -206,7 +211,6 @@
           </div>
         </section>
 
-
         <section class="contents6">
           <div class="container">
             <section class="contents6-1">
@@ -226,7 +230,7 @@
                   dolor sit amet lacus accumsan et viverra.
                 </p>
               </article>
-  
+
               <article class="contents6-2-list">
                 <img src="../images/contents6_icon_02.png" alt="아이콘" />
                 <h3 class="contents-heading type04">Well Crafted</h3>
@@ -236,7 +240,7 @@
                   dolor sit amet lacus accumsan et viverra.
                 </p>
               </article>
-  
+
               <article class="contents6-2-list">
                 <img src="../images/contents6_icon_03.png" alt="아이콘" />
                 <h3 class="contents-heading type04">Easy to Customize</h3>
@@ -405,12 +409,29 @@
             </section>
 
             <section class="contents10-2 clearfix">
-              <article class="contents10-2-1"></article>
-              <article class="contents10-2-1"></article>
+              <article class="contents10-2-1">
+
+                <div class="contact-input-container">
+                  <input type="text" class="contact-input" placeholder="Name" title="Name" />
+                </div>
+                <div class="contact-input-container">
+                  <input type="text" class="contact-input" placeholder="Email" title="Email" />
+                </div>
+                <div class="contact-input-container">
+                  <input type="text" class="contact-input" placeholder="Subject" title="Subject" />
+                </div>
+
+              </article>
+              <article class="contents10-2-1">
+                <div class="contact-input-container">
+                  <textarea class="contact-input textarea" placeholder="Message"></textarea>
+                </div>
+              </article>
             </section>
 
             <div class="btn-center">
               <button type="buttton" class="tab-download">Send Message</button>
+              <button type="buttton" class="tab-download copy-text">Copy Text</button>
             </div>
           </div>
         </section>
@@ -419,5 +440,7 @@
           <img src="../images/icons_footer.png" alt="아이콘" />
           <div class="footer-text">&copy; 2015 Axure Themes</div>
         </footer>
+      </div>
+
     </body>
 </html>

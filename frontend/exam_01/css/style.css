@@ -65,6 +65,25 @@ table {
 web page css
 */
 
+.loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+/* .contents{
+    height:0px;
+    overflow:hidden;
+    opacity:0;
+    transition:opacity 0.5s ease-out 0.5s;
+}
+
+.contents.active{
+    opacity:1;
+    height:auto;
+} */
+
 .header{
     width:100%;
     height:70px;
@@ -74,6 +93,22 @@ web page css
     top:0;
     left:0;
     z-index:900;
+    transition:height 0.3s ease-out;
+}
+
+/* scroll down : 아래로 스크롤 할 때 */
+.header.scroll{
+    height:35px;
+}
+
+.header .scroll-indicator{
+    position:absolute;
+    bottom:-3px;
+    left:0;
+    width:0;
+    height:3px;
+    background:#ff8b38;
+    transition:width 0.1s ease-out;
 }
 
 .container{
@@ -86,6 +121,20 @@ web page css
 .header-logo{
     float:left;
     margin-top:21px;
+    transition:margin-top 0.3s ease-out;
+}
+
+.header.scroll .header-logo{
+    margin-top:10px;
+}
+
+.header-logo-img{
+    height:27px;
+    transition:height 0.3s ease-out;
+}
+
+.header.scroll .header-logo-img{
+    height:15px;
 }
 
 .gnb{
@@ -100,6 +149,11 @@ web page css
 
 .gnb{
     margin-top:29px;
+    transition:margin-top 0.3s ease-out;
+}
+
+.header.scroll .gnb{
+    margin-top:10px;
 }
 
 .gnb-list{
@@ -643,6 +697,57 @@ web page css
 
 .contents10-1{
     text-align:center;
+}
+
+.contents10-2-1{
+    width:50%;
+    float:left;
+}
+
+.contact-input-container{
+    width:530px;
+    position:relative;
+}
+
+.contact-input-container:after{
+    content:"";
+    display:block;
+    width:0;
+    height:1px;
+    background:#ff8b38;
+    position:absolute;
+    bottom:0;
+    left:0;
+    transition:width 0.5s;
+}
+
+.contact-input-container.active:after{
+    width:100%;
+}
+
+.contact-input{
+    width:530px;
+    height:32px;
+    line-height:32px;
+    border:0;
+    border-bottom:1px solid #ddd;
+    margin-top:30px;
+    padding:0;
+}
+
+.contact-input:focus{
+    outline:none;
+    background:#fafafa;
+}
+
+.contact-input::placeholder{
+    color:#ddd;
+}
+
+.textarea{
+    height:158px;
+    font-family: 'Open Sans', sans-serif;
+    display:block;
 }
 
 .btn-center{
