@@ -14,7 +14,7 @@
       </div> -->
       <div class="contents">
         <header class="header">
-          <div class="container">
+          <div class="container relative-container">
               <h1 class="header-logo">
                   <a href="/" class="header-logo-link">
                       <img src="../images/logo.png" alt="AXIT 로고" class="header-logo-img" />
@@ -30,6 +30,10 @@
                       <li class="gnb-list-item"><a href="#" class="gnb-list-link">Contact</a></li>
                   </ul>
               </nav>
+
+              <div class="util">
+                <button class="login-menu">Login</button>
+              </div>
 
               <!-- <div class="clearfix"></div> => 가상 요소 -->
 
@@ -421,6 +425,25 @@
                   <input type="text" class="contact-input" placeholder="Subject" title="Subject" />
                 </div>
 
+                <div class="contact-input-container clearfix">
+
+                  <div class="contact-checkbox-container">
+                    <input type="checkbox" class="contact-checkbox" id="checkbox1" />
+                    <label class="contact-checkbox-label" for="checkbox1">HTML</label>
+                  </div>
+
+                  <div class="contact-checkbox-container">
+                    <input type="checkbox" class="contact-checkbox" id="checkbox2" />
+                    <label class="contact-checkbox-label" for="checkbox2">CSS</label>
+                  </div>
+
+                  <div class="contact-checkbox-container">
+                    <input type="checkbox" class="contact-checkbox" id="checkbox3" />
+                    <label class="contact-checkbox-label" for="checkbox3">JS</label>
+                  </div>
+                  
+                </div>
+
               </article>
               <article class="contents10-2-1">
                 <div class="contact-input-container">
@@ -435,6 +458,39 @@
             </div>
           </div>
         </section>
+
+        <a href="#" class="tab-download top-button">TOP</a>
+
+        <div class="login-dimm">
+
+          <section class="login">
+
+            <div class="login-title">
+              <span>로그인</span>
+              <button type="button" class="login-close">
+                <span>close</span>
+              </button>
+            </div>
+  
+            <div class="login-form">
+              <div class="contact-input-container">
+                <input type="text" class="contact-input" placeholder="ID" title="ID" />
+              </div>
+              <div class="contact-input-container">
+                <input type="text" class="contact-input" placeholder="Email" title="Email" />
+              </div>
+              <div class="contact-input-container">
+                <input type="password" class="contact-input" placeholder="Password" title="Password" />
+              </div>
+            </div>
+  
+            <button type="button" class="login-button">로그인</button>
+  
+          </section>
+
+        </div>
+
+        
 
         <footer class="footer">
           <img src="../images/icons_footer.png" alt="아이콘" />

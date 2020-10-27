@@ -96,6 +96,12 @@ $(function(){
         console.log( 'body : ' + $('body').height() );
         console.log( 'scroll : ' + $(this).scrollTop() );
         console.log( $('body').height() - $(this).scrollTop() );
+
+        if( scrolled > 50  ){
+            $('.top-button').addClass('on');
+        } else {
+            $('.top-button').removeClass('on');
+        }
     });
 
     $('.copy-text').on('click', function(){
@@ -103,6 +109,16 @@ $(function(){
         document.execCommand('copy');
 
         window.alert('클립보드에 복사되었습니다.');
+    });
+
+    // login popup open
+    $('.login-menu').on('click', function(){
+        $('.login-dimm').addClass('on');
+    });
+
+    // login popup close
+    $('.login-close').on('click', function(){
+        $('.login-dimm').removeClass('on');
     });
 
 });
