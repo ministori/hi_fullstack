@@ -67,9 +67,21 @@ web page css
 
 .header{
     height:79px;
-    position:absolute;
+    position:fixed;
     width:100%;
     z-index:900;
+    top:0;
+    /* transition:top 0.3s ease-out, background-color 0.5s; */
+    background-color:rgba(255,255,255,0);
+    transition:all 0.3s ease-out;
+}
+
+.header.scroll{
+    top:-79px;
+}
+
+.header.bg-white{
+    background-color:rgba(255,255,255,1);
 }
 
 .container{
@@ -113,6 +125,10 @@ web page css
     font-weight:700;
 }
 
+.header.bg-white .header-logo-link{
+    color:#000;
+}
+
 .gnb-list-item{
     float:left;
     margin-left:58px;
@@ -123,6 +139,10 @@ web page css
     font-size:14px;
     color:#fff;
     text-decoration:none;
+}
+
+.header.bg-white .gnb-list-link{
+    color:#000;
 }
 
 .gnb-list-link:hover{
@@ -142,6 +162,21 @@ web page css
     margin-top:30px;
 }
 
+.notification{
+    display:block;
+    width:15px;
+    height:15px;
+    background:#ff0000;
+    color:#fff;
+    position:absolute;
+    top:23px;
+    right:-6px;
+    line-height:15px;
+    text-align:center;
+    border-radius:10px;
+    font-size:11px;
+}
+
 .util-list-link.search{
     display:block;
     width:18px;
@@ -153,6 +188,7 @@ web page css
 
 .util-list-item{
     float:left;
+    position:relative;
 }
 
 .util-list-item:nth-child(1){
@@ -316,6 +352,12 @@ web page css
     display:block;
     float:left;
     width:25%;
+    height:390px;
+    overflow:hidden;
+}
+
+.gallery-image:nth-child(3){
+    height:780px;
 }
 
 .gallery-image:nth-child(5){
@@ -336,8 +378,45 @@ web page css
     bottom:0;
 }
 
+.gallery-image-item{
+    transform:scale(1);
+    transition:transform 0.3s;
+}
+
+.gallery-image-item.scale{
+    transform:scale(1.2);
+}
+
 .blog-image-group{
     position:relative;
+}
+
+.blog-image-group:hover{
+    cursor:pointer;
+}
+
+.blog-image-container{
+    width:380px;
+    height:240px;
+    position:relative;;
+}
+
+.blog-image{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.blog-image.overlay{
+    width:0;
+    overflow:hidden;
+    transition:width 0.5s ease-out;
+}
+
+.blog-image-group:hover .blog-image.overlay{
+    width:100%;
 }
 
 .blog-image-date{
@@ -432,4 +511,51 @@ web page css
 
 .contents3 div{
 
+}
+
+.contents4{
+    
+}
+
+.sticky-container{
+    height:100%;
+    position:relative;
+}
+
+.sticky-section{
+    height:1000px;
+    background:url(../images/contents4_bg.png) no-repeat center;
+    background-size:cover;
+
+    position:sticky;
+    top:0;
+    left:0;
+}
+
+.tablet-image{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-100%);
+}
+
+.text-section{
+    width:400px;
+    position:relative;
+    margin:0 auto;
+    left:280px;
+    top:-380px;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    text-align: justify;
+    line-height: 1.6;
+    height:3500px;
+}
+
+.smartphone-image{
+    position:relative;
+    left: 50%;
+    transform: translateX(35%);
+    top: 100px;
 }
