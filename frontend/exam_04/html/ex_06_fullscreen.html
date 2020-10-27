@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Screen</title>
+</head>
+<body>
+    <video class="video" controls> 
+        <source src="../videos/rain.mp4" type="video/mp4" />
+    </video>
+    <button type="button" class="open">Open FullScreen</button>
+    <button type="button" class="close">Close FullScreen</button>
+
+    <script>
+        //var elem = document.documentElement; // document
+        var elem = document.querySelector('.video');
+        function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+        }
+
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { /* Safari */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE11 */
+                document.msExitFullscreen();
+            }
+        }
+
+        document.querySelector('.open').addEventListener('click', function(){
+            openFullscreen();
+        });
+
+        document.querySelector('.close').addEventListener('click', function(){
+            closeFullscreen();
+        });
+    </script>
+</body>
+</html>
